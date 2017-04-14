@@ -1,0 +1,9 @@
+c:\users\danie\documents\visual studio 2015\Projects\ZtpGielda\Gielda\bin\Debug\Gielda.exe.config
+c:\users\danie\documents\visual studio 2015\Projects\ZtpGielda\Gielda\bin\Debug\Gielda.exe
+c:\users\danie\documents\visual studio 2015\Projects\ZtpGielda\Gielda\bin\Debug\Gielda.pdb
+c:\users\danie\documents\visual studio 2015\Projects\ZtpGielda\Gielda\obj\Debug\Gielda.csprojResolveAssemblyReference.cache
+c:\users\danie\documents\visual studio 2015\Projects\ZtpGielda\Gielda\obj\Debug\Gielda.exe
+c:\users\danie\documents\visual studio 2015\Projects\ZtpGielda\Gielda\obj\Debug\Gielda.pdb
+C:\Users\danie\documents\visual studio 2015\Projects\ZtpGielda\Gielda\bin\Debug\HtmlAgilityPack.dll
+C:\Users\danie\documents\visual studio 2015\Projects\ZtpGielda\Gielda\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\danie\documents\visual studio 2015\Projects\ZtpGielda\Gielda\bin\Debug\HtmlAgilityPack.xml
