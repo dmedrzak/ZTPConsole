@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Gielda.Models;
 
 namespace Gielda.COR
 {
@@ -10,11 +11,12 @@ namespace Gielda.COR
     {
         public string ProviderName { get; set; }
         public string DownloadActionName { get; set; }
-        protected ActionProvider nextProvider;
+        public ActionModel actionModel { get; set; }
+        protected ActionProvider NextProvider;
 
         public void SetNextActionProvider(ActionProvider provider)
         {
-            this.nextProvider = provider;
+            this.NextProvider = provider;
         }
 
         public abstract void DoTask(TasksToDo task);

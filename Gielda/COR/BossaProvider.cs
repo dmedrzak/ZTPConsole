@@ -19,33 +19,33 @@ namespace Gielda.COR
         }
         public override void DoTask(TasksToDo task)
         {
-            ActionModel model = new ActionModel();
+            //ActionModel model = new ActionModel();
             if (task == TasksToDo.DownloadSingleAction)
             {
                 try
                 {
-                     model = GetSingleAction(DownloadActionName);
+                     actionModel = GetSingleAction(DownloadActionName);
                 }
                 catch (Exception)
                 {
-                    nextProvider.DoTask(task);
+                    NextProvider.DoTask(task);
                 }
                 
-                if (model.Name != null)
+                if (actionModel.Name != null)
                 {
                     Console.WriteLine($"Information downloaded from {ProviderName}");
-                    Console.WriteLine($"Action name: {model.Name} Date: {model.Date} Maximum Price: {model.MaximumPrice} Open Price: {model.OpenPrice} Close Price: {model.MinPrice} TKO: {model.Tko} Trading Volume: {model.TradingVolume}");
+                    Console.WriteLine($"Action name: {actionModel.Name} Date: {actionModel.Date} Maximum Price: {actionModel.MaximumPrice} Open Price: {actionModel.OpenPrice} Close Price: {actionModel.MinPrice} TKO: {actionModel.Tko} Trading Volume: {actionModel.TradingVolume}");
                 }
                 else
                 {
                     Console.WriteLine($"ERROR - {ProviderName} - dont have any information about this action or server not response");
-                    nextProvider.DoTask(task);
+                    NextProvider.DoTask(task);
                 }
    
             }
-            else if (nextProvider != null)
+            else if (NextProvider != null)
             {
-                nextProvider.DoTask(task);
+                NextProvider.DoTask(task);
             }
         }
 

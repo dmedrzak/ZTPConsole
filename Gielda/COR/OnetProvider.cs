@@ -32,16 +32,16 @@ namespace Gielda.COR
                 // ParseHtml(html);
                 //Console.WriteLine($"Provider Name: {ProviderName} task: {task} Action Name: {DownloadActionName}");
             }
-            else if (nextProvider != null)
+            else if (NextProvider != null)
             {
-                nextProvider.DoTask(task);
+                NextProvider.DoTask(task);
             }
         }
 
         private ActionModel GetSingleAction(string name, HtmlDocument html)
         {
             var modelList = ParseHtmlToActionModel(html);
-            return modelList.FirstOrDefault(x => x.Name == name);
+            return actionModel=modelList.FirstOrDefault(x => x.Name == name);
 
         }
 

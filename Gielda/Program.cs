@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Gielda.COR;
+using Gielda.Decorator;
 
 namespace Gielda
 {
@@ -16,6 +17,10 @@ namespace Gielda
             ActionProvider onet = new OnetProvider(actionToDownload);
             bossa.SetNextActionProvider(onet);
             bossa.DoTask(TasksToDo.DownloadSingleAction);
+
+            DownloadedAction da = new DownloadedAction(onet.actionModel);
+            Provision provisionDecorator = new Provision(da);
+            Console.WriteLine(provisionDecorator.Price());
           //onet.DoTask(TasksToDo.DownloadSingleAction);
         }
     }

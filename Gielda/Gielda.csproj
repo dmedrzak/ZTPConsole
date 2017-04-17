@@ -51,6 +51,9 @@
     <Compile Include="COR\BossaProvider.cs" />
     <Compile Include="COR\OnetProvider.cs" />
     <Compile Include="COR\TasksToDo.cs" />
+    <Compile Include="Decorator\Action.cs" />
+    <Compile Include="Decorator\ActionDecorator.cs" />
+    <Compile Include="Decorator\DownloadedAction.cs" />
     <Compile Include="Models\ActionModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
