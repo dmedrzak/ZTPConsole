@@ -20,7 +20,10 @@ namespace Gielda.Decorator
         }
         public override double Price()
         {
-            return action.Price() + 0.2;
+            double normalPrice = action.Price();
+            double provision = 0.2;
+            Logger.Instance.AppendLoggerMessage($"Provision added to {action.action.Name}. Normal Price: {normalPrice}, Provision: {provision}, Summary Price:{normalPrice+provision}");
+            return normalPrice + provision;
         }
     }
 

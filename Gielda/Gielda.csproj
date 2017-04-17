@@ -62,6 +62,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton\CurrentExchangeRates.cs" />
+    <Compile Include="Singleton\Logger.cs" />
+    <Compile Include="Singleton\SoundPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

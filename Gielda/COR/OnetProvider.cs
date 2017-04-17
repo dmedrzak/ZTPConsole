@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Gielda.Models;
+using Gielda.Singleton;
 using HtmlAgilityPack;
 
 namespace Gielda.COR
@@ -29,12 +30,12 @@ namespace Gielda.COR
                 var model = GetSingleAction(DownloadActionName, html);
                 Console.WriteLine($"Information downloaded from {ProviderName}");
                 Console.WriteLine($"Action name: {model.Name} Date: {model.Date} Maximum Price: {model.MaximumPrice} Open Price: {model.OpenPrice} Close Price: {model.MinPrice} TKO: {model.Tko} Trading Volume: {model.TradingVolume}");
-                // ParseHtml(html);
-                //Console.WriteLine($"Provider Name: {ProviderName} task: {task} Action Name: {DownloadActionName}");
+                Logger.Instance.AppendLoggerMessage($"Information downloaded from: {ProviderName} Action Name: {model.Name}");
             }
             else if (NextProvider != null)
             {
                 NextProvider.DoTask(task);
+                Logger.Instance.AppendLoggerMessage($"ERROR - {ProviderName} - dont have any information about this action or server not response");
             }
         }
 

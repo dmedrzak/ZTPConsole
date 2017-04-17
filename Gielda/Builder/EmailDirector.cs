@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Gielda.Singleton;
 
 namespace Gielda.Builder
 {
@@ -17,8 +18,16 @@ namespace Gielda.Builder
 
         public void SendMail()
         {
-//           emailBuilder.CreateEmail();
-           emailBuilder.SendEmail();
+            try
+            {
+                emailBuilder.SendEmail();
+                Logger.Instance.AppendLoggerMessage($"Email with action send to: {emailBuilder.GetEmail().To}");
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.AppendLoggerMessage($"ERROR-Unable to send email. Exception: {ex}");
+            }
+           
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Gielda.Builder;
@@ -24,11 +25,12 @@ namespace Gielda
             //Decorator Provision
             DownloadedAction da = new DownloadedAction(onet.actionModel);
             Provision provisionDecorator = new Provision(da);
-            Console.WriteLine($"TKO with Provision: {provisionDecorator.Price()} PLN");
+            double decoratedPrice = provisionDecorator.Price();
+            Console.WriteLine($"TKO with Provision: {decoratedPrice} PLN");
 
             //Exchange Rate
             Console.WriteLine($"Today exchange rate: {CurrentExchangeRates.UsdRate()}");
-            Console.WriteLine($"TKO with Provision: {CurrentExchangeRates.ConvertPlnToUSD(provisionDecorator.Price())} USD");
+            Console.WriteLine($"TKO with Provision: {CurrentExchangeRates.ConvertPlnToUSD(decoratedPrice)} USD");
 
 
             //BUILDER
@@ -45,15 +47,15 @@ namespace Gielda
             postmanCompanyOne.SetSubject($"ZTP-GIELDA Ceny Akcji {actionToDownload}");
             postmanCompanyOne.SetMailBody($"Nazwa Akcji: {actionToDownload}\r\n" +
                                           $"Cena Akcji bez prowizji: {onet.actionModel.Tko} \r\n" +
-                                          $"Cena Akcji z prowizją: {provisionDecorator.Price()} \r\n" +
+                                          $"Cena Akcji z prowizją: {decoratedPrice} \r\n" +
                                           $"Dzisiejsza cena Dolara: {CurrentExchangeRates.UsdRate()} \r\n" +
-                                          $"Cena po przeliczeniu PLN-USD: {CurrentExchangeRates.ConvertPlnToUSD(provisionDecorator.Price())}");
+                                          $"Cena po przeliczeniu PLN-USD: {CurrentExchangeRates.ConvertPlnToUSD(decoratedPrice)}");
             //DIRECTOR
             EmailDirector director = new EmailDirector(postmanCompanyOne);
-            director.SendMail();
-
-
-
+          
+                director.SendMail();
+                Console.WriteLine(@"Email with Action Summary was send to dmedrzak93@gmail.com");
+                SoundPlayer.Instance.PlaySound();
         }
     }
 }
