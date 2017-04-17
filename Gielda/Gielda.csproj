@@ -59,6 +59,8 @@
     <Compile Include="Decorator\ActionDecorator.cs" />
     <Compile Include="Decorator\DownloadedAction.cs" />
     <Compile Include="Models\ActionModel.cs" />
+    <Compile Include="Observer\IObserver.cs" />
+    <Compile Include="Observer\IObservered.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton\CurrentExchangeRates.cs" />

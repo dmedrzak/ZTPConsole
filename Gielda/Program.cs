@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Gielda.Builder;
 using Gielda.COR;
 using Gielda.Decorator;
+using Gielda.Observer;
 using Gielda.Singleton;
 
 namespace Gielda
@@ -53,9 +55,25 @@ namespace Gielda
             //DIRECTOR
             EmailDirector director = new EmailDirector(postmanCompanyOne);
           
-                director.SendMail();
+                //director.SendMail();
                 Console.WriteLine(@"Email with Action Summary was send to dmedrzak93@gmail.com");
                 SoundPlayer.Instance.PlaySound();
+        
+            //OBSERVER
+            Provision observered = new Provision(provisionDecorator);
+            SoundPlayer.Instance.SetObserveredAction(observered);
+            observered.addObserver(SoundPlayer.Instance);
+            observered.NotifyObservers();
+            Thread.Sleep(2000);
+            observered.ChangeProvision(0.4);
+            observered.NotifyObservers();
+            Thread.Sleep(2000);
+            observered.NotifyObservers();
+            Thread.Sleep(2000);
+            observered.ChangeProvision(0.2);
+            observered.NotifyObservers();
+            Thread.Sleep(2000);
+
         }
     }
 }
