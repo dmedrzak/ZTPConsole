@@ -10,10 +10,10 @@ namespace Gielda.Models
     {
         public string Name { get; set; }
         public string Date { get; set; }
-        public string MaximumPrice { get; set; }
-        public string OpenPrice { get; set; }
-        public string MinPrice { get; set; }
-        public string Tko { get; set; }
+        public double MaximumPrice { get; set; }
+        public double OpenPrice { get; set; }
+        public double MinPrice { get; set; }
+        public double Tko { get; set; }
         public string TradingVolume { get; set; }
     }
 }

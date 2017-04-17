@@ -14,7 +14,7 @@ namespace Gielda.Decorator
             action = model;
         }
 
-        public override string Price()
+        public override double Price()
         {
             return action.Tko;
         }

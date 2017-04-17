@@ -47,6 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\EmailBuilder.cs" />
+    <Compile Include="Builder\EmailDirector.cs" />
+    <Compile Include="Builder\EmailPattern.cs" />
+    <Compile Include="Builder\PostmanCompanyOne.cs" />
     <Compile Include="COR\ActionProvider.cs" />
     <Compile Include="COR\BossaProvider.cs" />
     <Compile Include="COR\OnetProvider.cs" />
@@ -57,11 +61,13 @@
     <Compile Include="Models\ActionModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Singleton\CurrentExchangeRates.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

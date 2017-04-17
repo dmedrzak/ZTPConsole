@@ -10,6 +10,6 @@ namespace Gielda.Decorator
     public abstract class Action
     {
         public ActionModel action { get; set; }
-        public abstract string Price();
+        public abstract double Price();
     }
 }

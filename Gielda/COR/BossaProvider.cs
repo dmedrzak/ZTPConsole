@@ -70,10 +70,10 @@ namespace Gielda.COR
             {
                 Name = action[0],
                 Date = action[1],
-                MaximumPrice = action[2],
-                OpenPrice = action[3],
-                MinPrice = action[4],
-                Tko = action[5],
+                MaximumPrice = Convert.ToDouble(action[2]),
+                OpenPrice = Convert.ToDouble(action[3]),
+                MinPrice = Convert.ToDouble(action[4]),
+                Tko = Convert.ToDouble(action[5]),
                 TradingVolume = action[6]
                 
             };

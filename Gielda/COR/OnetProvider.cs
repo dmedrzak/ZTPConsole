@@ -59,11 +59,11 @@ namespace Gielda.COR
                 try
                 {// \r\n
                     model.Name = cellRows[3].ChildNodes[3].InnerText.Trim();
-                    model.MaximumPrice = cellRows[10].InnerText;
-                    model.OpenPrice = cellRows[8].InnerText;
-                    model.MinPrice = cellRows[9].InnerText;
+                    model.MaximumPrice = Convert.ToDouble(cellRows[10].InnerText);
+                    model.OpenPrice = Convert.ToDouble(cellRows[8].InnerText);
+                    model.MinPrice = Convert.ToDouble(cellRows[9].InnerText);
                     model.TradingVolume = cellRows[11].InnerText;
-                    model.Tko = cellRows[4].InnerText.Trim();
+                    model.Tko = Convert.ToDouble(cellRows[4].InnerText.Trim());
                    
                     modelList.Add(model);
                 }

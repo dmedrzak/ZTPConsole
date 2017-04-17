@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Gielda.Singleton;
 
 namespace Gielda.Decorator
 {
@@ -12,16 +13,29 @@ namespace Gielda.Decorator
 
     public class Provision : ActionDecorator
     {
-        private Action action;
-
+        private new Action action;
         public Provision(Action action)
         {
             this.action = action;
         }
-
-        public override string Price()
+        public override double Price()
         {
-            return action.Price() + "Provision 0,2$";
+            return action.Price() + 0.2;
+        }
+    }
+
+    public class ExchangeUSD : Action
+    {
+        private new Action action;
+        public ExchangeUSD(Action action)
+        {
+            this.action = action;
+        }
+
+        public override double Price()
+        {
+            CurrentExchangeRates.ConvertPlnToUSD(2);
+            return action.Price();
         }
     }
 }
