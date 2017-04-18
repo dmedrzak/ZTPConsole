@@ -59,21 +59,15 @@ namespace Gielda
                 Console.WriteLine(@"Email with Action Summary was send to dmedrzak93@gmail.com");
                 SoundPlayer.Instance.PlaySound();
         
-            //OBSERVER
+            //OBSERVER SETTINGS
             Provision observered = new Provision(provisionDecorator);
             SoundPlayer.Instance.SetObserveredAction(observered);
+            Logger.Instance.SetObserveredAction(observered);
             observered.addObserver(SoundPlayer.Instance);
-            observered.NotifyObservers();
-            Thread.Sleep(2000);
-            observered.ChangeProvision(0.4);
-            observered.NotifyObservers();
-            Thread.Sleep(2000);
-            observered.NotifyObservers();
-            Thread.Sleep(2000);
-            observered.ChangeProvision(0.2);
-            observered.NotifyObservers();
-            Thread.Sleep(2000);
-
+            observered.addObserver(Logger.Instance);
+          
+            //FAKE OBSERVER DATA
+            FakeObserverData.Instance.GenerateFakeProvision(observered);
         }
     }
 }

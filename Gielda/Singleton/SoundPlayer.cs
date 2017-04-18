@@ -57,10 +57,7 @@ namespace Gielda.Singleton
             {
                 lastProvision = actualprovision;
                 PlaySound();
-                Console.WriteLine("Object Get New Provision: {0}", actualprovision);
-            }else
-                Console.WriteLine("Provision not change: {0}", actualprovision);
-
+            }       
         }
     }
 }
